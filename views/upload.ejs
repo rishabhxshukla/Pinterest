@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Upload Image</title>
+  </head>
+
+  <body>
+    <div class="flex h-screen items-center justify-center bg-blue-50">
+      <!-- UPLOAD IMAGE CONTAINER -->
+      <div
+        class="flex h-[60%] flex-col items-center justify-center gap-16 rounded-3xl border border-gray-300 bg-blue-100 p-5 shadow-xl sm:h-[50%] sm:w-[50%] lg:h-[60%] lg:w-[25%]"
+      >
+        <!-- HEADING -->
+        <h1 class="font-mono text-5xl font-bold underline underline-offset-4">
+          New Image
+        </h1>
+
+        <!-- INPUT FORM -->
+        <form
+          action="/upload"
+          method="post"
+          enctype="multipart/form-data"
+          class="flex flex-col items-center justify-center gap-10"
+        >
+          <!-- INPUT FIELD -->
+          <input type="file" name="uploadedImage" class="font-mono" />
+
+          <!-- SUBMIT BUTTON -->
+          <button
+            type="submit"
+            class="w-[50%] rounded-3xl bg-[#E60023] py-2 font-bold text-white hover:bg-[#ff1111]"
+          >
+            Upload
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

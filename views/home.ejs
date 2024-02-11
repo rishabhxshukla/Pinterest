@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="output.css" />
+  <title>Pinterest - Home</title>
+</head>
+
+<body>
+  <!-- LOGOUT -->
+  <div class="flex justify-end pr-5 pt-5 bg-blue-50">
+    <a href="/logout">
+      <button class="w-[100px] bg-[#E60023] hover:bg-[#ff1111] rounded-md py-1 text-sm md:text-base font-semibold text-white">Logout</button>
+    </a>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="flex flex-col items-center justify-start pt-10 bg-blue-50">
+
+    <!-- PROFILE -->
+    <div class="flex flex-col items-center justify-center">
+
+      <!-- IMAGE -->
+      <img src="profile.png" alt="Profile" class="h-[90px] md:h-[120px] mb-3" />
+
+      <!-- NAME -->
+      <h1 class="font-bold text-xl md:text-2xl">
+        <%= name %>
+      </h1>
+
+      <!-- USERNAME -->
+      <h3 class="font-semibold text-md md:text-lg mb-3">@<%= username %>
+      </h3>
+
+      <!-- FOLLOWERS -->
+      <div class="flex gap-3 font-semibold text-md md:text-lg">
+        <h1>3 followers</h1>
+        <h1>10 following</h1>
+      </div>
+
+      <br>
+
+      <!-- UPLOAD PAGE BUTTON -->
+      <a href="/upload" class="w-full">
+        <button class="w-full rounded-3xl bg-[#E60023] hover:bg-[#ff1111] py-2 mb-20 font-bold text-sm md:text-base text-white">
+          Upload Image
+        </button>
+      </a>
+
+    </div>
+
+    <!-- IMAGE CONTAINER -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 bg-indigo-50 border border-gray-300 p-10 rounded-3xl w-[75%] shadow-lg mb-10">
+
+        <% images.forEach(image => { %>
+          <img src="<%= image %>" 
+          alt="<%= image %>" 
+          class="md:w-[200px] md:h-[180px] lg:w-[230px] lg:h-[200px] m-4 place-self-center drop-shadow-xl rounded-2xl select-none">
+        <% }); %>
+
+      </div>
+  </div>
+</body>
+
+</html>
